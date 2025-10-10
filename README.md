@@ -247,11 +247,7 @@ Shubham Traders (Onion Export)
 - **My Family** - For supporting my tech + agriculture journey
 - **The Dev Community** - For endless inspiration and resources
 
-## 📄 License
-
-This portfolio is open source and available under the MIT License. Feel free to fork and customize for your own use!
-
----
+## 📄 Licens
 
 <div align="center">
 
