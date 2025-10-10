@@ -1,0 +1,13 @@
+# Portfolio Deployment Files
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+node_modules/
+.env
+*.swp
+*.swo
+*~
+.cache/
+dist/
