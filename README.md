@@ -197,7 +197,7 @@ xdg-open index.html  # Linux
 
 ## 📱 Contact & Social
 
-- **LinkedIn**: [Shubham Gangurde](https://www.linkedin.com/in/shubham-gangurde-b34359284/)
+- **LinkedIn**: [Shubham Gangurde](https://www.linkedin.com/in/shubham-gangurde79)
 - **GitHub**: [@ShubhTHEkings](https://github.com/ShubhTHEkings)
 - **Email**: shubhamgangurde@example.com
 - **Location**: Nashik, Maharashtra, India
@@ -247,7 +247,11 @@ Shubham Traders (Onion Export)
 - **My Family** - For supporting my tech + agriculture journey
 - **The Dev Community** - For endless inspiration and resources
 
-## 📄 Licens
+## 📄 License
+
+This portfolio is open source and available under the MIT License. Feel free to fork and customize for your own use!
+
+---
 
 <div align="center">
 
@@ -255,7 +259,7 @@ Shubham Traders (Onion Export)
 
 *Building the future, one line of code at a time* ✨
 
-[Portfolio](#) • [LinkedIn](https://www.linkedin.com/in/shubham-gangurde-b34359284/) • [GitHub](https://github.com/ShubhTHEkings)
+[Portfolio](#) • [LinkedIn](https://www.linkedin.com/in/shubham-gangurde79) • [GitHub](https://github.com/ShubhTHEkings)
 
 **#Back2School #Codédex #WebDev #Portfolio**
 

@@ -20,7 +20,7 @@ const pauseTime = 2000;
 
 function typeRole() {
     const currentRole = roles[roleIndex];
-    
+
     if (isDeleting) {
         typingElement.textContent = currentRole.substring(0, charIndex - 1);
         charIndex--;
@@ -28,9 +28,9 @@ function typeRole() {
         typingElement.textContent = currentRole.substring(0, charIndex + 1);
         charIndex++;
     }
-    
+
     let timeout = isDeleting ? deletingSpeed : typingSpeed;
-    
+
     if (!isDeleting && charIndex === currentRole.length) {
         timeout = pauseTime;
         isDeleting = true;
@@ -38,7 +38,7 @@ function typeRole() {
         isDeleting = false;
         roleIndex = (roleIndex + 1) % roles.length;
     }
-    
+
     setTimeout(typeRole, timeout);
 }
 
@@ -53,13 +53,13 @@ let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
-    
+
     if (currentScroll > 100) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
-    
+
     lastScroll = currentScroll;
 });
 
@@ -71,7 +71,7 @@ const navMenu = document.getElementById('nav-menu');
 
 hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
-    
+
     // Animate hamburger
     const spans = hamburger.querySelectorAll('span');
     if (navMenu.classList.contains('active')) {
@@ -125,9 +125,9 @@ filterButtons.forEach(button => {
         filterButtons.forEach(btn => btn.classList.remove('active'));
         // Add active class to clicked button
         button.classList.add('active');
-        
+
         const filter = button.getAttribute('data-filter');
-        
+
         projectCards.forEach(card => {
             if (filter === 'all' || card.getAttribute('data-category') === filter) {
                 card.style.display = 'block';
@@ -144,7 +144,7 @@ filterButtons.forEach(button => {
 // ================================
 function animateSkillBars() {
     const skillBars = document.querySelectorAll('.skill-progress');
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -154,7 +154,7 @@ function animateSkillBars() {
             }
         });
     }, { threshold: 0.5 });
-    
+
     skillBars.forEach(bar => observer.observe(bar));
 }
 
@@ -163,7 +163,7 @@ function animateSkillBars() {
 // ================================
 function revealOnScroll() {
     const reveals = document.querySelectorAll('.project-card, .skill-category, .highlight-item, .about-image, .about-text');
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
@@ -174,7 +174,7 @@ function revealOnScroll() {
             }
         });
     }, { threshold: 0.1 });
-    
+
     reveals.forEach(element => observer.observe(element));
 }
 
@@ -185,23 +185,23 @@ const contactForm = document.getElementById('contact-form');
 
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     // Get form data
     const formData = new FormData(contactForm);
     const name = formData.get('name');
     const email = formData.get('email');
     const subject = formData.get('subject');
     const message = formData.get('message');
-    
+
     // Create mailto link
     const mailtoLink = `mailto:shubhamgangurde@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-    
+
     // Open mail client
     window.location.href = mailtoLink;
-    
+
     // Show success message
     alert('Thank you for reaching out! Your default email client will open. If it doesn\'t, please email me directly at shubhamgangurde@example.com');
-    
+
     // Reset form
     contactForm.reset();
 });
@@ -212,7 +212,7 @@ contactForm.addEventListener('submit', (e) => {
 function createParticles() {
     const particlesContainer = document.querySelector('.hero-particles');
     const particleCount = 50;
-    
+
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.style.position = 'absolute';
@@ -234,7 +234,7 @@ function createParticles() {
 function updateActiveNavLink() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     window.addEventListener('scroll', () => {
         let current = '';
         sections.forEach(section => {
@@ -244,7 +244,7 @@ function updateActiveNavLink() {
                 current = section.getAttribute('id');
             }
         });
-        
+
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === `#${current}`) {
@@ -272,7 +272,7 @@ document.addEventListener('mousemove', (e) => {
 // ================================
 function lazyLoadImages() {
     const images = document.querySelectorAll('img[data-src]');
-    
+
     const imageObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -283,7 +283,7 @@ function lazyLoadImages() {
             }
         });
     });
-    
+
     images.forEach(img => imageObserver.observe(img));
 }
 
@@ -292,13 +292,13 @@ function lazyLoadImages() {
 // ================================
 function addCardEffects() {
     const cards = document.querySelectorAll('.project-card, .highlight-item, .skill-category');
-    
+
     cards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-10px) scale(1.02)';
         });
-        
-        card.addEventListener('mouseleave', function() {
+
+        card.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(0) scale(1)';
         });
     });
@@ -309,19 +309,19 @@ function addCardEffects() {
 // ================================
 function setupEmailCopy() {
     const emailElements = document.querySelectorAll('.contact-item p');
-    
+
     emailElements.forEach(element => {
         if (element.textContent.includes('@')) {
             element.style.cursor = 'pointer';
             element.title = 'Click to copy email';
-            
+
             element.addEventListener('click', () => {
                 navigator.clipboard.writeText(element.textContent);
-                
+
                 const originalText = element.textContent;
                 element.textContent = '✓ Copied!';
                 element.style.color = 'var(--accent)';
-                
+
                 setTimeout(() => {
                     element.textContent = originalText;
                     element.style.color = '';
@@ -336,11 +336,11 @@ function setupEmailCopy() {
 // ================================
 function setupProjectQuickView() {
     const projectCards = document.querySelectorAll('.project-card');
-    
+
     projectCards.forEach(card => {
         const overlay = card.querySelector('.project-overlay');
         const content = card.querySelector('.project-content');
-        
+
         card.addEventListener('click', (e) => {
             // Don't trigger on link clicks
             if (e.target.tagName !== 'A' && !e.target.closest('a')) {
@@ -358,23 +358,23 @@ document.addEventListener('DOMContentLoaded', () => {
     animateSkillBars();
     revealOnScroll();
     updateActiveNavLink();
-    
+
     // Initialize effects
     createParticles();
     addCardEffects();
     setupEmailCopy();
     setupProjectQuickView();
-    
+
     // Performance
     lazyLoadImages();
-    
+
     // Add loading animation
     document.body.style.opacity = '0';
     setTimeout(() => {
         document.body.style.transition = 'opacity 0.5s ease';
         document.body.style.opacity = '1';
     }, 100);
-    
+
     console.log('%c🚀 Portfolio Loaded Successfully!', 'color: #6366f1; font-size: 20px; font-weight: bold;');
     console.log('%c👋 Welcome to my portfolio! Feel free to explore.', 'color: #ec4899; font-size: 14px;');
     console.log('%cBuilt with ❤️ for Codédex Back2School Challenge', 'color: #10b981; font-size: 12px;');
@@ -389,7 +389,7 @@ const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLe
 document.addEventListener('keydown', (e) => {
     konamiCode.push(e.key);
     konamiCode = konamiCode.slice(-10);
-    
+
     if (konamiCode.join('') === konamiSequence.join('')) {
         document.body.style.animation = 'rainbow 2s linear infinite';
         alert('🎉 You found the secret! Konami Code activated! 🚀');
@@ -412,7 +412,7 @@ document.head.appendChild(style);
 function setupDarkModeToggle() {
     // Check if user prefers dark mode
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
+
     // You can add a toggle button in the navbar if desired
     // For now, it respects system preferences
 }
@@ -449,9 +449,9 @@ function createBackToTopButton() {
         z-index: 999;
         box-shadow: 0 5px 20px rgba(99, 102, 241, 0.4);
     `;
-    
+
     document.body.appendChild(backToTop);
-    
+
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 500) {
             backToTop.style.opacity = '1';
@@ -461,18 +461,18 @@ function createBackToTopButton() {
             backToTop.style.transform = 'translateY(10px)';
         }
     });
-    
+
     backToTop.addEventListener('click', () => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
     });
-    
+
     backToTop.addEventListener('mouseenter', () => {
         backToTop.style.transform = 'translateY(-5px) scale(1.1)';
     });
-    
+
     backToTop.addEventListener('mouseleave', () => {
         backToTop.style.transform = 'translateY(0) scale(1)';
     });

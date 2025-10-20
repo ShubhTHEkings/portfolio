@@ -176,7 +176,7 @@ Tested on Chrome, Firefox, Safari, and Edge.
 
 ## 📬 Connect With Me
 
-- **LinkedIn**: [Shubham Gangurde](https://www.linkedin.com/in/shubham-gangurde-b34359284/)
+- **LinkedIn**: [Shubham Gangurde](https://www.linkedin.com/in/shubham-gangurde79)
 - **GitHub**: [@ShubhTHEkings](https://github.com/ShubhTHEkings)
 - **Email**: shubhamgangurde@example.com *(Update with real email)*
 - **Location**: Nashik, Maharashtra, India
